@@ -1,10 +1,9 @@
 package com.ismak.spring.crud.model;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 
@@ -16,10 +15,10 @@ public class User {
     @Column(name = "id")
     private int id;
 
+    @Size(min = 2, message = "The name must contain at least 2 characters.")
+    @NotBlank(message = "The name should not be empty!")
+    @Pattern(regexp = "^[a-zA-Zа-яА-ЯёЁ]+$", message = "The name can contain only letters")
     @Column(name = "name")
-    @Size(min = 2, message = "имя должно содержать не менее 2 символов")
-    @NotBlank(message = "Имя не должно быть пустым!")
-    @Pattern(regexp = "^[a-zA-Zа-яА-ЯёЁ\\s]+$", message = "Имя может содержать только буквы")
     private String name;
 
     public User() {

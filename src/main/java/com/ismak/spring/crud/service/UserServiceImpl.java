@@ -2,7 +2,6 @@ package com.ismak.spring.crud.service;
 
 import com.ismak.spring.crud.dao.UserDAO;
 import com.ismak.spring.crud.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,8 +17,8 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public List<User> index() {
-        return userDAO.index();
+    public List<User> getAllUsers() {
+        return userDAO.getAllUsers();
     }
 
     @Override
@@ -39,6 +38,7 @@ public class UserServiceImpl implements UserService{
         userDAO.update(id, updateUser);
     }
 
+    @Transactional
     @Override
     public void delete(int id) {
         userDAO.delete(id);

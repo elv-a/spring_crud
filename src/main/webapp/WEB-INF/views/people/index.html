@@ -6,20 +6,10 @@
 </head>
 <body>
 <h1>USERS</h1>
-<table border="1">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>NAME USER</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="user : ${people}">
-        <td th:text="${user.id}"></td>
-        <td th:text="${user.name}"></td>
-    </tr>
-    </tbody>
-</table>
+<div th:each="user : ${people}">
+    <a th:href="@{/users/show(id=${user.getId()})}"
+       th:text="${user.getId() + '|' + user.getName()}">user</a>
+</div>
 <br>
 <a href="users/new">ADD NEW USER</a>
 </body>

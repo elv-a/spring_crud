@@ -5,7 +5,7 @@ import com.ismak.spring.crud.model.User;
 import java.util.List;
 
 public interface UserDAO {
-    List<User> index();
+    List<User> getAllUsers();
 
     User show(int id);
 

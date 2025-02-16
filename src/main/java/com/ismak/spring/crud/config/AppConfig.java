@@ -19,6 +19,7 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
+@ComponentScan(value = "com.ismak.spring.crud")
 public class AppConfig {
     private final Environment env;
 
