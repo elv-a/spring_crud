@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.List;
 
@@ -47,9 +46,9 @@ public class UsersController {
         if (bindingResult.hasErrors()) {
             return "people/new";
         } else {
-            userService.save(user);
-            return "redirect:/users";
+        userService.save(user);
         }
+        return "redirect:/users";
     }
 
     @GetMapping("/edit")
@@ -66,7 +65,7 @@ public class UsersController {
         if (bindingResult.hasErrors()) {
             return "people/edit";
         } else {
-            userService.update(id, user);
+        userService.update(id, user);
         }
         return "redirect:/users";
     }
@@ -76,5 +75,4 @@ public class UsersController {
         userService.delete(id);
         return "redirect:/users";
     }
-
 }

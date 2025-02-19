@@ -2,9 +2,8 @@ package com.ismak.spring.crud.dao;
 
 import com.ismak.spring.crud.model.User;
 import org.springframework.stereotype.Repository;
-
-import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.EntityManager;
 import java.util.List;
 
 @Repository

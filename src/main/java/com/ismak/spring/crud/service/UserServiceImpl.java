@@ -1,7 +1,7 @@
 package com.ismak.spring.crud.service;
 
-import com.ismak.spring.crud.dao.UserDAO;
 import com.ismak.spring.crud.model.User;
+import com.ismak.spring.crud.dao.UserDAO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

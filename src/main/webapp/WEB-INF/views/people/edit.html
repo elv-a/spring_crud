@@ -7,7 +7,8 @@
 <body>
 <form th:method="PATCH" th:action="@{/users/update(id=${user.getId()})}" th:object="${user}">
     <label for="name">Enter name: </label>
-    <input type="text" th:field="*{name}" id="name"/>
+    <input type="text" th:field="*{name}" id="name" required minlength="2" maxlength="20"
+           pattern="^[a-zA-Zа-яА-ЯёЁ]+$" />
     <div style="color: red" th:if="${#fields.hasErrors()}" th:errors="*{name}">Name error</div>
     <br/>
     <input type="submit" value="UPDATE!"/>
